@@ -107,6 +107,13 @@ public class InputOutputTool {
             System.out.println("Ugyldigt input\n");
             this.presentCapital();
         }
+        public void AnnuritetChosen() {
+        try {
+            
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.AnnuritetChosen();
+        }
     }
 
     String welcomeString = "\n\n\n"
