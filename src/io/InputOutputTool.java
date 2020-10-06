@@ -38,60 +38,73 @@ public class InputOutputTool {
             menu();
         }
     }
-   
-    public boolean isThisANumber(String input) {
-        return input.chars().allMatch(Character::isDigit);
-    }
-    
-    
+        
     public void futureCapitalChosen() {
-        System.out.println("Venligst indtast din nuværende kapital: ");
-        double capital = (double) Double.parseDouble(sc.nextLine());
-        System.out.println("Venligst indtast din rente i antal procent: ");
-        double interest = (double) Double.parseDouble(sc.nextLine())/100;
-        System.out.println("Venligst indtast den ønskede tidsperiode i antal terminer: ");
-        double periods = (double) Double.parseDouble(sc.nextLine());
-        double result = model.calculateFutureCapital(capital, interest, periods);
-        System.out.println("Om "+periods+" med følgende kapital: "+capital+" og renten: "+interest+" vil du nå følgende sum "+result+"\n");
-        menu();
+        try {
+            System.out.println("Venligst indtast din nuværende kapital: ");      
+            double capital = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din rente i antal procent: ");
+            double interest = (double) Double.parseDouble(sc.nextLine())/100;
+            System.out.println("Venligst indtast den ønskede tidsperiode i antal terminer: ");
+            double periods = (double) Double.parseDouble(sc.nextLine());
+            double result = model.calculateFutureCapital(capital, interest, periods);
+            System.out.println("Om "+periods+" med følgende kapital: "+capital+" og renten: "+interest+" vil du nå følgende sum "+result+"\n");
+            menu(); }
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.futureCapitalChosen();
+        }
     }
     
     public void numerOfPeriodsChosen() {
-        System.out.println("Venligst indtast din nuværende kapital: ");
-        double presentCapital = (double) Double.parseDouble(sc.nextLine());
-        System.out.println("Venligst indtast din rente i antal procent: ");
-        double interest = (double) Double.parseDouble(sc.nextLine())/100;
-        System.out.println("Venligst indtast din ønskede slutkapital");
-        double futureCapital = (double) Double.parseDouble(sc.nextLine());
-        double result = model.calculatePeriods(futureCapital, presentCapital, interest);
-        System.out.println("Med startkapital "+presentCapital+", renten "+interest+", og ønskede slutkapital på "+futureCapital+", vil du skulle vente "+result+" terminer\n");
-        menu();
+        try {
+            System.out.println("Venligst indtast din nuværende kapital: ");
+            double presentCapital = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din rente i antal procent: ");
+            double interest = (double) Double.parseDouble(sc.nextLine())/100;
+            System.out.println("Venligst indtast din ønskede slutkapital");
+            double futureCapital = (double) Double.parseDouble(sc.nextLine());
+            double result = model.calculatePeriods(futureCapital, presentCapital, interest);
+            System.out.println("Med startkapital "+presentCapital+", renten "+interest+", og ønskede slutkapital på "+futureCapital+", vil du skulle vente "+result+" terminer\n");
+            menu(); }
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.numerOfPeriodsChosen();
+        }
     }
     
     public void interestChosen() {
-        System.out.println("Venligst indtast din nuværende kapital: ");
-        double presentCapital = (double) Double.parseDouble(sc.nextLine());
-        System.out.println("Venligst indtast antallet af terminer ");
-        double periods = (double) Double.parseDouble(sc.nextLine());
-        System.out.println("Venligst indtast din ønskede slutkapital");
-        double futureCapital = (double) Double.parseDouble(sc.nextLine());
-        double result = model.calculateInterest(futureCapital, presentCapital, periods);
-        System.out.println("Med startkapital: "+presentCapital+", slutkapital: "+futureCapital+", og antallet af terminer: "+periods+", har du modtaget renten: "+result+"\n");
-        menu();
+        try {
+            System.out.println("Venligst indtast din nuværende kapital: ");
+            double presentCapital = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast antallet af terminer ");
+            double periods = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din ønskede slutkapital");
+            double futureCapital = (double) Double.parseDouble(sc.nextLine());
+            double result = model.calculateInterest(futureCapital, presentCapital, periods);
+            System.out.println("Med startkapital: "+presentCapital+", slutkapital: "+futureCapital+", og antallet af terminer: "+periods+", har du modtaget renten: "+result+"\n");
+            menu(); }
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.interestChosen();
+        }
     }
     
     public void presentCapital() {
-        System.out.println("Venligst indtast din slutkapital: ");
-        double futureCapital = (double) Double.parseDouble(sc.nextLine());
-        System.out.println("Venligst indtast din rente i procent: ");
-        double interest = (double) Double.parseDouble(sc.nextLine())/100;
-        System.out.println("Venligst indtast antallet af terminer: ");
-        double periods = (double) Double.parseDouble(sc.nextLine());
-        double result = model.calculatePresentCapital(futureCapital, interest, periods);
-        System.out.println("Med slutkapitalen; "+futureCapital+", renten: "+interest+" og antallet af terminer: "+periods+", har du startkapitalen: "+result+"\n");
-        menu();
-    
-        
+        try {
+            System.out.println("Venligst indtast din slutkapital: ");
+            double futureCapital = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din rente i procent: ");
+            double interest = (double) Double.parseDouble(sc.nextLine())/100;
+            System.out.println("Venligst indtast antallet af terminer: ");
+            double periods = (double) Double.parseDouble(sc.nextLine());
+            double result = model.calculatePresentCapital(futureCapital, interest, periods);
+            System.out.println("Med slutkapitalen; "+futureCapital+", renten: "+interest+" og antallet af terminer: "+periods+", har du startkapitalen: "+result+"\n");
+            menu(); }
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.presentCapital();
+        }
     }
 
     String welcomeString = "\n\n\n"
