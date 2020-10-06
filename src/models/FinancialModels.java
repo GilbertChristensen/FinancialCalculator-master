@@ -19,7 +19,7 @@ public class FinancialModels {
      * @param futureCapital angiver Kn = slutværdien
      * @param interest angiver r = renten
      * @param periods angiver n = antallet af terminer/perioder
-     * @return k0 = startkapitalen på baggrund af de ovenstående parametere
+     * @return k0 = startkapitalen på baggrund af de ovenstående parametre
      */
     
     public double calculatePresentCapital(double futureCapital, double interest, double periods) { 
@@ -42,10 +42,23 @@ public class FinancialModels {
      * @param futureCapital angiver Kn = slutværdien
      * @param presentCapital k0 = startværdien
      * @param interest r = renten
-     * @return n = antallet af terminer på baggrund af overstående parametere
+     * @return n = antallet af terminer på baggrund af overstående parametre
      */
     
     public double calculatePeriods(double futureCapital, double presentCapital, double interest) {
         return Math.log(futureCapital/presentCapital)/Math.log(1+interest);
     }
+    
+    /**
+     * Funktion til at beregne fremtidsværdien af en annuitet (annuitetsopsparing)
+     * @param ydelse angiver y = ydelsen
+     * @param periods n = antallet af terminer
+     * @param interest r = renten
+     * @return A_n = Fremtidsværdien af en annuitet på baggrund af overstående parametre
+     */
+    
+    public double calculateAnnuitet(double ydelse, double periods, double interest) {
+        return ydelse*((Math.pow((1+interest),periods)-1)/interest);
+    }
+    
 }

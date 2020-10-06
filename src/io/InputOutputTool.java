@@ -30,7 +30,7 @@ public class InputOutputTool {
             this.presentCapital();
         }
          else if(input.equals("5")) {
-            this.presentCapital();
+            this.annuitetChosen();
         }
         else if(input.equals("6")) {
             System.out.println("Programmet afsluttes");
@@ -67,7 +67,7 @@ public class InputOutputTool {
             System.out.println("Venligst indtast din ønskede slutkapital");
             double futureCapital = (double) Double.parseDouble(sc.nextLine());
             double result = model.calculatePeriods(futureCapital, presentCapital, interest);
-            System.out.println("Med startkapital "+presentCapital+", renten "+interest+", og ønskede slutkapital på "+futureCapital+", vil du skulle vente "+result+" terminer\n");
+            System.out.println("Med startkapital: "+presentCapital+", renten "+interest+", og ønskede slutkapital på "+futureCapital+", vil du skulle vente "+result+" terminer\n");
             menu(); }
         catch(NumberFormatException e) {
             System.out.println("Ugyldigt input\n");
@@ -101,18 +101,28 @@ public class InputOutputTool {
             System.out.println("Venligst indtast antallet af terminer: ");
             double periods = (double) Double.parseDouble(sc.nextLine());
             double result = model.calculatePresentCapital(futureCapital, interest, periods);
-            System.out.println("Med slutkapitalen; "+futureCapital+", renten: "+interest+" og antallet af terminer: "+periods+", har du startkapitalen: "+result+"\n");
+            System.out.println("Med slutkapitalen: "+futureCapital+", renten: "+interest+" og antallet af terminer: "+periods+", har du startkapitalen: "+result+"\n");
             menu(); }
         catch(NumberFormatException e) {
             System.out.println("Ugyldigt input\n");
             this.presentCapital();
         }
-        public void AnnuritetChosen() {
+    }
+    
+    public void annuitetChosen() {
         try {
-            
+            System.out.println("Venligst indtast ydelsen, som du vil betale hver termin: ");
+            double ydelse = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast antallet af terminer: ");
+            double periods = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din rente i antal procent: ");
+            double interest = (double) Double.parseDouble(sc.nextLine())/100;
+            double result = model.calculateAnnuitet(ydelse, periods, interest);
+            System.out.println("Med ydelsen: "+ydelse+", renten: "+interest+" og antallet af terminer: "+periods+", har du en annuitetsopsparing på: "+result+"\n");           
+            menu(); }
         catch(NumberFormatException e) {
             System.out.println("Ugyldigt input\n");
-            this.AnnuritetChosen();
+            this.annuitetChosen();
         }
     }
 
@@ -159,7 +169,7 @@ public class InputOutputTool {
             + "\nVælg 2 for at beregne rente mellem to perioder"
             + "\nVælg 3 for at beregne antallet af terminer for at opnå en bestemt kapital"
             + "\nVælg 4 for at beregne din startkapital"
-            + "\nVælg 5 for at beregne din Annuitetsopsparing"
+            + "\nVælg 5 for at beregne din annuitetsopsparing"
             + "\nVælg 6 for at afslutte programmet";
     
 }
