@@ -31,7 +31,7 @@ public class InputOutputTool {
         }
         
         else if(input.equals("5")) {
-            System.out.println("Programmet afsluttes");
+            System.out.println("Programmet afsluttes hej");
         }
         else {
             System.out.println("error 404: ukendt forespøgsel, prøv venligst igen");
