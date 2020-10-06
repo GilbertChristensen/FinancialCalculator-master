@@ -29,9 +29,11 @@ public class InputOutputTool {
         else if(input.equals("4")) {
             this.presentCapital();
         }
-        
-        else if(input.equals("5")) {
-            System.out.println("Programmet afsluttes hej");
+         else if(input.equals("5")) {
+            this.presentCapital();
+        }
+        else if(input.equals("6")) {
+            System.out.println("Programmet afsluttes");
         }
         else {
             System.out.println("error 404: ukendt forespøgsel, prøv venligst igen");
@@ -150,6 +152,7 @@ public class InputOutputTool {
             + "\nVælg 2 for at beregne rente mellem to perioder"
             + "\nVælg 3 for at beregne antallet af terminer for at opnå en bestemt kapital"
             + "\nVælg 4 for at beregne din startkapital"
-            + "\nVælg 5 for at afslutte programmet";
+            + "\nVælg 5 for at beregne din Annuitetsopsparing"
+            + "\nVælg 6 for at afslutte programmet";
     
 }
