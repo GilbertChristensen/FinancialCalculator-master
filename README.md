@@ -1,3 +1,2 @@
 # FinancialCalculator
- Konsolapplikation, EG informatik C
-\n Udarbejdet af Bertram, Jonas og Gilbert
+ Konsolapplikation, EG informatik C, udarbejdet af Bertram, Jonas og Gilbert
