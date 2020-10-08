@@ -1,0 +1,9 @@
+Diskussion
+Fyld kontra funktionalitet: 
+Vi har meget gentagende kode fx. de forskellige strings som bliver genbrugt gennem programmet.
+Hvis koden var opbygget anderledes, så kunne der have været anderledes metoder til at finde inputs og 
+tjekke om de er gyldige. Funktionaliteten af lommeregneren kunne også mere gennemarbejdet, igennem
+tilføjelsen af andre beregningsmetoder til andre funktioner.
+
+Hvis der havde været mere tid eller vi havde lidt mere erfaring, så kunne programmet nok havde været
+opbygget fra bunden af, istedet for brugen af start-programmet (skitsen).

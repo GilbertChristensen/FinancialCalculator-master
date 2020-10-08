@@ -11,4 +11,9 @@ Financialcalculator kan beregne følgende udtryk:
 5. Fremtidsværdien for en annuitet (annuitetsopsparing)
 6. Beregne restgælden for et lån
 
-Når programmet er startet vil den guide dig igennem dens funktionalitet!
+Når programmet er startet (ved at køre filen FinancialCalculator.java) vil den guide dig igennem dens funktionalitet!
+
+COPYRIGHT
+CHRISTENSEN, HØJBJERRE & NØRGAARD A/S
+
+Credits: Hans Harck Tønning, Alex Uldahl Pedersen
