@@ -17,6 +17,9 @@ public class InputOutputTool {
         this.menu();
     }
     
+    /**
+     * Funktionen får brugerens input og vælger ud fra dette hvilken funktion fra FinancialModels.java, der skal bruges.
+     */
     public void menu() {
         System.out.println(this.menuString);
         sc = new Scanner(System.in);
@@ -47,7 +50,10 @@ public class InputOutputTool {
             menu();
         }
     }
-        
+    
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne slutkapitalen.
+     */
     public void futureCapitalChosen() {
         try {
             System.out.println("Venligst indtast din nuværende kapital: ");      
@@ -65,6 +71,9 @@ public class InputOutputTool {
         }
     }
     
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne antal terminer.
+     */
     public void numerOfPeriodsChosen() {
         try {
             System.out.println("Venligst indtast din nuværende kapital: ");
@@ -82,6 +91,9 @@ public class InputOutputTool {
         }
     }
     
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne renten.
+     */
     public void interestChosen() {
         try {
             System.out.println("Venligst indtast din nuværende kapital: ");
@@ -99,6 +111,9 @@ public class InputOutputTool {
         }
     }
     
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne startkapitalen.
+     */
     public void presentCapital() {
         try {
             System.out.println("Venligst indtast din slutkapital: ");
@@ -116,6 +131,9 @@ public class InputOutputTool {
         }
     }
     
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne fremtidværdien for en annuitetsopsparing.
+     */
     public void annuitetChosen() {
         try {
             System.out.println("Venligst indtast ydelsen som du vil betale hver termin: ");
@@ -133,6 +151,9 @@ public class InputOutputTool {
         }
     }
     
+    /**
+     * Funktionen anmoeder brugeren om input, og bruger de værdier til at udregne restgæld.
+     */
     public void outstandingDebt() {
         try {
             System.out.println("Venligst indtast hovedstolen på dit lån: ");
@@ -151,7 +172,7 @@ public class InputOutputTool {
             this.outstandingDebt();
         }
     }
-
+    
     String welcomeString = "\n\n\n"
             + "                                                                         \n"
             + "                                                                         \n"
