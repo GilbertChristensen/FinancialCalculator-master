@@ -3,6 +3,10 @@ package io;
 import java.util.Scanner;
 import models.FinancialModels;
 
+/**
+ * Hele inputOutputTool classen er til for at kommunikere med brugeren.
+ */
+
 public class InputOutputTool {
     
     FinancialModels model = new FinancialModels();
