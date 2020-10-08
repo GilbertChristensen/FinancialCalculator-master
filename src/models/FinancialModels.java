@@ -61,4 +61,16 @@ public class FinancialModels {
         return ydelse*((Math.pow((1+interest),periods)-1)/interest);
     }
     
+    /**
+     * Funktion til at beregne restgælden for et lån
+     * @param hovedstol A0 = hovedstolen for lånet
+     * @param ydelse y = ydelsen der skal betales hver termin
+     * @param interest r = renten for lånet
+     * @param periods t = antallet af terminer
+     * @return Rt = restgælden for lånet beregnet på baggrund af overstående parametre
+     */
+    
+    public double calculateOutstandingDebt(double hovedstol, double ydelse, double interest, double periods) {
+        return hovedstol*(Math.pow((1+interest),periods)) - (ydelse*((Math.pow((1+interest),periods)-1)/interest));
+    }
 }

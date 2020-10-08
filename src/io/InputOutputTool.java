@@ -29,10 +29,13 @@ public class InputOutputTool {
         else if(input.equals("4")) {
             this.presentCapital();
         }
-         else if(input.equals("5")) {
+        else if(input.equals("5")) {
             this.annuitetChosen();
         }
         else if(input.equals("6")) {
+             this.outstandingDebt();
+        } 
+        else if(input.equals("7")) {
             System.out.println("Programmet afsluttes");
         }
         else {
@@ -50,7 +53,7 @@ public class InputOutputTool {
             System.out.println("Venligst indtast den ønskede tidsperiode i antal terminer: ");
             double periods = (double) Double.parseDouble(sc.nextLine());
             double result = model.calculateFutureCapital(capital, interest, periods);
-            System.out.println("Om "+periods+" med følgende kapital: "+capital+" og renten: "+interest+" vil du nå følgende sum "+result+"\n");
+            System.out.println("Om "+periods+" terminer med følgende kapital: "+capital+" og renten: "+interest+" vil du nå følgende sum "+result+"\n");
             menu(); }
         catch(NumberFormatException e) {
             System.out.println("Ugyldigt input\n");
@@ -111,7 +114,7 @@ public class InputOutputTool {
     
     public void annuitetChosen() {
         try {
-            System.out.println("Venligst indtast ydelsen, som du vil betale hver termin: ");
+            System.out.println("Venligst indtast ydelsen som du vil betale hver termin: ");
             double ydelse = (double) Double.parseDouble(sc.nextLine());
             System.out.println("Venligst indtast antallet af terminer: ");
             double periods = (double) Double.parseDouble(sc.nextLine());
@@ -123,6 +126,25 @@ public class InputOutputTool {
         catch(NumberFormatException e) {
             System.out.println("Ugyldigt input\n");
             this.annuitetChosen();
+        }
+    }
+    
+    public void outstandingDebt() {
+        try {
+            System.out.println("Venligst indtast hovedstolen på dit lån: ");
+            double hovedstol = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast ydelsen du vil indbetale hver termin: ");
+            double ydelse = (double) Double.parseDouble(sc.nextLine());
+            System.out.println("Venligst indtast din rente i procent: ");
+            double interest = (double) Double.parseDouble(sc.nextLine())/100;
+            System.out.println("Venligst indtast antallet af terminer du vil betale dit af på dit lån: ");
+            double periods = (double) Double.parseDouble(sc.nextLine());
+            double result = model.calculateOutstandingDebt(hovedstol, ydelse, interest, periods);
+            System.out.println("Med hovedstolen: "+hovedstol+", ydelsen: "+ydelse+", renten: "+interest+" og antallet af terminer: "+periods+" vil du få en restgæld på: "+result+"\n");
+            menu(); }
+        catch(NumberFormatException e) {
+            System.out.println("Ugyldigt input\n");
+            this.outstandingDebt();
         }
     }
 
@@ -170,6 +192,7 @@ public class InputOutputTool {
             + "\nVælg 3 for at beregne antallet af terminer for at opnå en bestemt kapital"
             + "\nVælg 4 for at beregne din startkapital"
             + "\nVælg 5 for at beregne din annuitetsopsparing"
-            + "\nVælg 6 for at afslutte programmet";
+            + "\nVælg 6 for at beregne din restgæld for et lån"
+            + "\nVælg 7 for at afslutte programmet";
     
 }
