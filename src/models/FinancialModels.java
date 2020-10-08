@@ -1,5 +1,9 @@
 package models;
 
+/**
+ * Classen FinancialModels er til for at beregne de forskellige værdier brugeren gerne vil have udregnet.
+ */
+
 public class FinancialModels {
     
 
